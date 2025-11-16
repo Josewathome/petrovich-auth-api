@@ -1,0 +1,39 @@
+.
+├── .env
+├── .env.dev
+├── .env.prod
+├── .gitignore
+├── Dockerfile.dev
+├── Dockerfile.prod
+├── README.md
+├── docker-compose.dev.yml
+├── docker-compose.prod.yml
+├── main.py
+├── program_tree.txt
+├── requirements.txt
+├── src
+│   ├── api
+│   │   ├── __init__.py
+│   │   ├── common.py
+│   │   └── petrovich.py
+│   ├── application
+│   │   ├── __init__.py
+│   │   └── services.py
+│   ├── core
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   └── response_helper.py
+│   ├── domain
+│   │   ├── __init__.py
+│   │   ├── exceptions.py
+│   │   ├── models.py
+│   │   └── services.py
+│   └── infrastructure
+│       ├── __init__.py
+│       ├── http_client.py
+│       ├── session_store.py
+│       └── validator_client.py
+├── test_petrovich_api.py
+└── test_petrovich_api_py.txt
+
+6 directories, 30 files

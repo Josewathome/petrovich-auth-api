@@ -1,0 +1,29 @@
+(venv) Locallaptop@DESKTOP-NEItG1:~/projects/REFACTORING_CODE/petrovich_auth_api$ python test_petrovich_api.py
+2025-11-16 15:52:28,558 - INFO - Creating initial session...
+2025-11-16 15:52:28,558 - INFO - Starting session creation...
+2025-11-16 15:52:28,558 - INFO - Requesting frontend page: https://petrovich.ru
+2025-11-16 15:52:31,985 - INFO - Found session URL: https://api.petrovich.ru/session/v3/init.js?client_id=pet_site&time=1763297550&nonce=f18ff9a1ededa71286419ba7eb1aad2f
+2025-11-16 15:52:31,986 - INFO - Extracted session params: {'client_id': 'pet_site', 'time': '1763297550', 'nonce': 'f18ff9a1ededa71286419ba7eb1aad2f'}
+2025-11-16 15:52:31,986 - INFO - Initializing session: https://api.petrovich.ru/session/v3/init.js
+2025-11-16 15:52:34,049 - INFO - Added allowed cookie: SIK
+2025-11-16 15:52:34,049 - INFO - Added allowed cookie: SIV
+2025-11-16 15:52:34,050 - INFO - Added pattern-matched cookie: C_-zXPTBA0x0WWYmU_Qc49MmmXzao
+2025-11-16 15:52:34,050 - INFO - Session initialization response: window.pet4Data = window.pet4Data || {}; window.pet4Data.session = {"started":true,"action":"started...
+2025-11-16 15:52:34,051 - INFO - Session created successfully. Cookies: ['SIK', 'SIV', 'C_-zXPTBA0x0WWYmU_Qc49MmmXzao']
+2025-11-16 15:52:34,051 - INFO - 
+--- Searching for 79211234567 ---
+2025-11-16 15:52:34,051 - INFO - Searching for phone: 79211234567
+2025-11-16 15:52:34,631 - INFO - Search response: {"state":{"code":200,"title":"Запрос успешно выполнен"},"data":{"isUsed":false,"type":"phone"}}...
+Phone: 79211234567
+Result: Не найден
+Code: NOT_FOUND
+----------------------------------------
+2025-11-16 15:52:36,632 - INFO - 
+--- Searching for 79319876543 ---
+2025-11-16 15:52:36,632 - INFO - Searching for phone: 79319876543
+2025-11-16 15:52:37,134 - INFO - Search response: {"state":{"code":200,"title":"Запрос успешно выполнен"},"data":{"isUsed":false,"type":"phone"}}...
+Phone: 79319876543
+Result: Не найден
+Code: NOT_FOUND
+----------------------------------------
+(venv) Locallaptop@DESKTOP-NEItG1:~/projects/REFACTORING_CODE/petrovich_auth_api$ 
