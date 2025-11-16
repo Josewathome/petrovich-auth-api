@@ -47,12 +47,12 @@ logger = logging.getLogger(__name__)
 @app.on_event("startup")
 async def startup_event():
     """Actions to perform on startup"""
-    logger.info(f"{settings.SERVICE_NAME} starting up...")
+    logger.info(f"{settings.SERVICE_NAME} {settings.VERSION_NO} starting up...")
 
 @app.on_event("shutdown")
 async def shutdown_event():
     """Actions to perform on shutdown"""
-    logger.info(f"{settings.SERVICE_NAME} shutting down...")
+    logger.info(f"{settings.SERVICE_NAME} {settings.VERSION_NO} shutting down...")
     
 import uvicorn   
 if __name__ == "__main__":

@@ -178,6 +178,11 @@ VERSION_NO_VALUE=v1
 
 **Response**:
 ```json
+{
+  "status": "healthy",
+  "service": "petrovich_auth_api",
+  "version": "v1.0.0"
+}
 
 ```
 
