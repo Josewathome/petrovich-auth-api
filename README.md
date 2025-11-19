@@ -3,12 +3,12 @@
 
 ## Overview
 
-Petrovich is a web scraping service that checks user account existence on **petrovich.ru** - a Russian home improvement and construction materials retailer. The service validates whether phone numbers, emails, or usernames are registered in Petrovich's customer database.
+Petrovich is a web scraping service that checks user account existence on **petrovich.ru** - a Russian home improvement and construction materials retailer. The service validates whether phone numbers or emails are registered in Petrovich's customer database.
 
 ## Core Functionality
 
 - **Account Validation**: Checks if user accounts exist on petrovich.ru
-- **Multiple Identifiers**: Supports phone numbers, email addresses, and usernames
+- **Multiple Identifiers**: Supports phone numbers, email addresses.
 - **Session Management**: Maintains authenticated sessions with the target website
 - **Sfera Integration**: Returns standardized responses following Sfera guidelines
 
@@ -18,7 +18,6 @@ Petrovich is a web scraping service that checks user account existence on **petr
 |------------|----------|-------------|----------|
 | `phone` | `phone` | Russian phone numbers (7XXXXXXXXXX) | eg. 79211234567 |
 | `email` | `email` | Email addresses | eg. email@email.com |
-| `nick` | `login` | Usernames (mapped to "login" in API) | eg. username101 |
 
 ## Project Structure  for more informaton check the program_tree.txt
 
@@ -202,8 +201,7 @@ Content-Type: application/json
 {
   "query": [
     "email@example.com",
-    "79211234567",
-    "username123"
+    "79211234567"
   ]
 }
 ```
@@ -253,24 +251,6 @@ Content-Type: application/json
       "searched_value": "79211234567",
       "session_retries": 0,
       "validator_used": true
-    }
-  },
-  {
-    "headers": {
-      "sender": "petrovich",
-      "status": "error",
-      "processed_at": "2024-01-01T12:00:02Z"
-    },
-    "body": {
-      "error": "No valid search type found in payload",
-      "error_code": "INVALID_DATA",
-      "status": "error"
-    },
-    "extra": {
-      "original_query": "username123",
-      "validator_failed": false,
-      "fallback_used": false,
-      "exception_type": "InvalidDataError"
     }
   }
 ]
@@ -322,9 +302,6 @@ Content-Type: application/json
     },
     {
       "email": "email@example.com"
-    },
-    {
-      "nick": "username123"
     }
   ]
 }
@@ -440,12 +417,11 @@ Content-Type: application/json
 ```json
 {
   "phone": "79211234567",
-  "email": "email@example.com", 
-  "nick": "username123"
+  "email": "email@example.com"
 }
 ```
 
-**Note**: Only one field should be provided per request. If multiple fields are provided, they are processed in priority order: phone → email → nick.
+**Note**: Only one field should be provided per request. If multiple fields are provided, they are processed in priority order: phone → email.
 
 **Response**:
 ```json
@@ -649,9 +625,7 @@ curl -X POST "http://localhost:8000/api/v1/validate" \
   -d '{
     "query": [
       "email@example.com",
-      "79211234567", 
-      "testuser",
-      "invalid@data"
+      "79211234567"
     ]
   }'
 ```

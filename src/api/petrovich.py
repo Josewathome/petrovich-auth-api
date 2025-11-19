@@ -10,7 +10,7 @@ router = APIRouter()
 class SearchRequest(BaseModel):
     phone: str = None
     email: str = None
-    nick: str = None
+    #nick: str = None  # commented out Nick so its not part of the search requests did not delete the functionality  if you want to activate nick just uncomment it
 
 @router.post("/search", response_model=Dict[str, Any])
 async def search_petrovich(request: SearchRequest):
